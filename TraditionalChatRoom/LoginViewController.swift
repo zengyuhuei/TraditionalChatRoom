@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
     
     func turnToSecondSreen() {
         if let controller = storyboard?.instantiateViewController(withIdentifier: "second") {
-            
+            print("turnToSecondSreen")
             navigationController?.pushViewController(controller, animated: true)
         }
     }
@@ -83,7 +83,7 @@ class LoginViewController: UIViewController {
                     let facebookAccessToken = FBSDKAccessToken.current()?.tokenString
                     print(facebookAccessToken ?? "null")
                     UserData.save(userData: UserData(name: name, email: email, facebookID: facebookID, pictureUrl: pictureUrl, facebookAccessToken: facebookAccessToken ?? "null"))
-                    //self.addAccount(facebookAccessToken: facebookAccessToken, deviceToken: self.deviceToken!.token)
+                    self.addAccount(facebookAccessToken: facebookAccessToken ?? "null")
                     
                     
                 }
@@ -95,9 +95,9 @@ class LoginViewController: UIViewController {
         }
     }
     
-    /*func addAccount(facebookAccessToken: String, deviceToken: String) {
+    func addAccount(facebookAccessToken: String) {
         do {
-            let urlString = "http://140.121.197.197:3000/addAccount?facebook_token="+facebookAccessToken+"&device_token="+deviceToken
+            let urlString = "http://140.121.198.84:9600/addAccount?facebook_token="+facebookAccessToken
             print(urlString)
             let urlWithPercentEscapes = urlString.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)
             let url = URL(string: urlWithPercentEscapes!)!
@@ -110,7 +110,7 @@ class LoginViewController: UIViewController {
                     decoder.decode(ResponseCode.self, from: data)
                 {
                     print(results)
-                    if(results.code == "200"){
+                    if(results.code == 200){
                         print("addAccount success")
                     } else {
                         print("addAccount error")
@@ -123,6 +123,6 @@ class LoginViewController: UIViewController {
             
             task.resume()
         }
-    }*/
+    }
 }
 

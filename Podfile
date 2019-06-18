@@ -9,6 +9,8 @@ target 'TraditionalChatRoom' do
 
   pod 'FBSDKCoreKit', '4.39.1' 
   pod 'FBSDKLoginKit', '4.39.1'
+  pod 'IQKeyboardManagerSwift'
+  pod 'Starscream'
   #pod 'FacebookCore'
   #pod 'FacebookLogin'
   #pod 'FacebookShare'

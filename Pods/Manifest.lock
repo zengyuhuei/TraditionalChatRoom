@@ -9,22 +9,30 @@ PODS:
     - Bolts (~> 1.9)
   - FBSDKLoginKit (4.39.1):
     - FBSDKCoreKit
+  - IQKeyboardManagerSwift (6.3.0)
+  - Starscream (3.1.0)
 
 DEPENDENCIES:
   - FBSDKCoreKit (= 4.39.1)
   - FBSDKLoginKit (= 4.39.1)
+  - IQKeyboardManagerSwift
+  - Starscream
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Bolts
     - FBSDKCoreKit
     - FBSDKLoginKit
+    - IQKeyboardManagerSwift
+    - Starscream
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FBSDKCoreKit: f442aa96179cc9b382bb4abeb7e340a47cca8f91
   FBSDKLoginKit: c3079d9a4db27c492287b1eed7a4272b28cf8a59
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
 
-PODFILE CHECKSUM: ec2cb588b317f0d9dc142def48e964bfdb30ffeb
+PODFILE CHECKSUM: 1e6e256341bec01ff4f2a3104c5f02d568269b8e
 
 COCOAPODS: 1.7.1

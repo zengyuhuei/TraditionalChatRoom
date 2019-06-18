@@ -12,6 +12,9 @@
 		AA6911C922AE315700763D28 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6911C822AE315700763D28 /* MyCollectionViewCell.swift */; };
 		AA6911CB22AF9B2600763D28 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6911CA22AF9B2600763D28 /* ChattingViewController.swift */; };
 		AA6911CD22AF9BE200763D28 /* MyChattingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6911CC22AF9BE200763D28 /* MyChattingTableViewCell.swift */; };
+		AA6911CF22B0090400763D28 /* ResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6911CE22B0090400763D28 /* ResponseCode.swift */; };
+		AA97865322B0472C001A8DBD /* RoomCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA97865222B0472C001A8DBD /* RoomCode.swift */; };
+		AA97865522B0D98E001A8DBD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA97865422B0D98E001A8DBD /* Message.swift */; };
 		AAC86C2A22ABEC4A00389E94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC86C2922ABEC4A00389E94 /* AppDelegate.swift */; };
 		AAC86C2C22ABEC4A00389E94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC86C2B22ABEC4A00389E94 /* ViewController.swift */; };
 		AAC86C2F22ABEC4A00389E94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC86C2D22ABEC4A00389E94 /* Main.storyboard */; };
@@ -56,7 +59,10 @@
 		AA6911C822AE315700763D28 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA6911CA22AF9B2600763D28 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		AA6911CC22AF9BE200763D28 /* MyChattingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChattingTableViewCell.swift; sourceTree = "<group>"; };
+		AA6911CE22B0090400763D28 /* ResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCode.swift; sourceTree = "<group>"; };
 		AA781E772C76D749957DACF9 /* Pods-TraditionalChatRoomUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraditionalChatRoomUITests.release.xcconfig"; path = "Target Support Files/Pods-TraditionalChatRoomUITests/Pods-TraditionalChatRoomUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AA97865222B0472C001A8DBD /* RoomCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCode.swift; sourceTree = "<group>"; };
+		AA97865422B0D98E001A8DBD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		AAC86C2622ABEC4A00389E94 /* TraditionalChatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraditionalChatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC86C2922ABEC4A00389E94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAC86C2B22ABEC4A00389E94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 				AA6911C822AE315700763D28 /* MyCollectionViewCell.swift */,
 				AA6911CA22AF9B2600763D28 /* ChattingViewController.swift */,
 				AA6911CC22AF9BE200763D28 /* MyChattingTableViewCell.swift */,
+				AA6911CE22B0090400763D28 /* ResponseCode.swift */,
+				AA97865222B0472C001A8DBD /* RoomCode.swift */,
+				AA97865422B0D98E001A8DBD /* Message.swift */,
 			);
 			path = TraditionalChatRoom;
 			sourceTree = "<group>";
@@ -411,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6911C722AE308200763D28 /* ChatRoomViewController.swift in Sources */,
+				AA97865322B0472C001A8DBD /* RoomCode.swift in Sources */,
 				AAF449CE22ACD0AA009D0A02 /* UserInfoTableViewController.swift in Sources */,
 				AA6911C922AE315700763D28 /* MyCollectionViewCell.swift in Sources */,
 				AA6911CD22AF9BE200763D28 /* MyChattingTableViewCell.swift in Sources */,
@@ -418,7 +428,9 @@
 				AAC86C5822AC03A600389E94 /* LoginViewController.swift in Sources */,
 				AAC86C2C22ABEC4A00389E94 /* ViewController.swift in Sources */,
 				AA6911CB22AF9B2600763D28 /* ChattingViewController.swift in Sources */,
+				AA97865522B0D98E001A8DBD /* Message.swift in Sources */,
 				AAF449CC22ACCD1B009D0A02 /* UserData.swift in Sources */,
+				AA6911CF22B0090400763D28 /* ResponseCode.swift in Sources */,
 				AAC86C2A22ABEC4A00389E94 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

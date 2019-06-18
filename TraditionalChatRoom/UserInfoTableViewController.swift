@@ -24,9 +24,12 @@ class UserInfoTableViewController: UITableViewController {
             
         }
         
-    
     }
     
+    @IBAction func logout(_ sender: Any) {
+        print("logout press")
+ 
+    }
     
     
 }
