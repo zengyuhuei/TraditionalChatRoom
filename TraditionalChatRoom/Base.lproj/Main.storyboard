@@ -158,7 +158,7 @@
         <scene sceneID="hVY-aW-qyv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9UX-if-DLU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Create" id="Gg3-bA-3cI"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="create_new-1" selectedImage="create_new-1" id="Gg3-bA-3cI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YSj-9F-LFd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -219,8 +219,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF0-ew-D7y" userLabel="UserName">
-                                                    <rect key="frame" x="161" y="60" width="98" height="48"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF0-ew-D7y" userLabel="UserName">
+                                                    <rect key="frame" x="20" y="60" width="374" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
                                                     <nil key="textColor"/>
@@ -229,15 +229,15 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="116" id="w4q-8u-ysj">
-                                        <rect key="frame" x="0.0" y="477" width="414" height="116"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="149" id="w4q-8u-ysj">
+                                        <rect key="frame" x="0.0" y="477" width="414" height="149"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w4q-8u-ysj" id="vTK-EU-5iK">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hd6-R7-yR9" userLabel="UserEmail">
-                                                    <rect key="frame" x="20" y="58" width="374" height="48"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hd6-R7-yR9" userLabel="UserEmail">
+                                                    <rect key="frame" x="20" y="58" width="374" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
                                                     <nil key="textColor"/>
@@ -261,14 +261,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="214" id="teR-iF-MpK">
-                                        <rect key="frame" x="0.0" y="593" width="414" height="214"/>
+                                        <rect key="frame" x="0.0" y="626" width="414" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="teR-iF-MpK" id="bb8-TV-dQt">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="capooInfo" translatesAutoresizingMaskIntoConstraints="NO" id="zib-iN-XPw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="214"/>
+                                                    <rect key="frame" x="0.0" y="11" width="414" height="203"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -297,7 +297,7 @@
         <scene sceneID="vFu-iw-l0h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="50C-hS-a92" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Info" id="PsH-Na-H8m"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="user_male-2" selectedImage="user_male" id="PsH-Na-H8m"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wpE-PF-iHb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -316,7 +316,7 @@
         <scene sceneID="VbQ-w7-tfh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9dA-Hg-cVa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Room" id="Nc7-0U-ptc"/>
+                    <tabBarItem key="tabBarItem" title="Room" image="chat-2" selectedImage="chat-1" id="Nc7-0U-ptc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9IV-up-oQO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -341,7 +341,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kw1-qD-pfu"/>
                     </view>
-                    <navigationItem key="navigationItem" title="聊天室" id="5o1-W1-YAz"/>
+                    <navigationItem key="navigationItem" title="聊天室" id="5o1-W1-YAz">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="e6a-eV-aI2">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="URT-I0-YgG">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete Room"/>
+                                <connections>
+                                    <action selector="deleteRoom:" destination="fUq-dL-uq3" eventType="touchUpInside" id="oSG-iP-DIy"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="deleteRoom:" destination="fUq-dL-uq3" id="DhC-dc-srj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2K0-UC-feM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -397,7 +411,12 @@
         <image name="backRoom" width="1008" height="1512"/>
         <image name="capoo-1" width="514" height="340"/>
         <image name="capooInfo" width="1280" height="720"/>
+        <image name="chat-1" width="30" height="30"/>
+        <image name="chat-2" width="30" height="30"/>
+        <image name="create_new-1" width="30" height="30"/>
         <image name="login-removebg" width="198" height="278"/>
         <image name="sticker" width="278" height="224"/>
+        <image name="user_male" width="30" height="30"/>
+        <image name="user_male-2" width="30" height="30"/>
     </resources>
 </document>

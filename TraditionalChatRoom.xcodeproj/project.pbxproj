@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B9BEF96B4772BCFE6E8DEE5 /* Pods_TraditionalChatRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7293D570C80D7DC73C8DE4 /* Pods_TraditionalChatRoom.framework */; };
+		9936EC7622B9236B004FB6A5 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936EC7522B9236B004FB6A5 /* MessageResponse.swift */; };
 		AA6911C722AE308200763D28 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6911C622AE308200763D28 /* ChatRoomViewController.swift */; };
 		AA6911C922AE315700763D28 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6911C822AE315700763D28 /* MyCollectionViewCell.swift */; };
 		AA6911CB22AF9B2600763D28 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6911CA22AF9B2600763D28 /* ChattingViewController.swift */; };
@@ -55,6 +56,7 @@
 		60DB25D39E1143D0B0134D1B /* Pods-TraditionalChatRoomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraditionalChatRoomTests.release.xcconfig"; path = "Target Support Files/Pods-TraditionalChatRoomTests/Pods-TraditionalChatRoomTests.release.xcconfig"; sourceTree = "<group>"; };
 		6E7293D570C80D7DC73C8DE4 /* Pods_TraditionalChatRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraditionalChatRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C275CA6A9952121334B5F81 /* Pods_TraditionalChatRoomUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraditionalChatRoomUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9936EC7522B9236B004FB6A5 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
 		AA6911C622AE308200763D28 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		AA6911C822AE315700763D28 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA6911CA22AF9B2600763D28 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				AA6911CE22B0090400763D28 /* ResponseCode.swift */,
 				AA97865222B0472C001A8DBD /* RoomCode.swift */,
 				AA97865422B0D98E001A8DBD /* Message.swift */,
+				9936EC7522B9236B004FB6A5 /* MessageResponse.swift */,
 			);
 			path = TraditionalChatRoom;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				AA97865522B0D98E001A8DBD /* Message.swift in Sources */,
 				AAF449CC22ACCD1B009D0A02 /* UserData.swift in Sources */,
 				AA6911CF22B0090400763D28 /* ResponseCode.swift in Sources */,
+				9936EC7622B9236B004FB6A5 /* MessageResponse.swift in Sources */,
 				AAC86C2A22ABEC4A00389E94 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

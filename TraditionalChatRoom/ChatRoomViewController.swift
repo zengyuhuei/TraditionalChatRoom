@@ -7,19 +7,17 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
     var rooms : [ResponseCode]?
     var roomResult : [RoomCode]?
     var beforeSize = 0
+    var myCollectionView : UICollectionView!
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
      
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*do{
-            try FileManager.default.removeItem(at: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("roomInfo").appendingPathExtension("plist"))
-        }catch{
-            
-        }*/
+       
         // 設置底色
         self.view.backgroundColor = UIColor.white
         
@@ -40,19 +38,19 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
         layout.footerReferenceSize = CGSize(width: fullScreenSize.width, height: 40)
         
         // 建立 UICollectionView
-        let myCollectionView = UICollectionView(frame: CGRect(x: 0, y: 20, width: fullScreenSize.width, height: fullScreenSize.height - 20), collectionViewLayout: layout)
+        self.myCollectionView = UICollectionView(frame: CGRect(x: 0, y: 20, width: fullScreenSize.width, height: fullScreenSize.height - 20), collectionViewLayout: layout)
         
         // 註冊 cell 以供後續重複使用
-        myCollectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        self.myCollectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
         // 註冊 section 的 header 跟 footer 以供後續重複使用
-        myCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
-        myCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "Footer")
+        self.myCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
+        self.myCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "Footer")
  
         // 設置委任對象
-        myCollectionView.delegate = self
-        myCollectionView.dataSource = self
-        myCollectionView.backgroundColor = UIColor(red: 0/255, green: 246/255, blue: 255/255, alpha: 0.5)
+        self.myCollectionView.delegate = self
+        self.myCollectionView.dataSource = self
+        self.myCollectionView.backgroundColor = UIColor(red: 0/255, green: 246/255, blue: 255/255, alpha: 0.5)
         // 加入畫面中
         self.view.addSubview(myCollectionView)
         
@@ -61,6 +59,8 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewDidLoad()
+        //open the tab bar
+        self.tabBarController?.tabBar.isHidden = false
         
     }
     // 必須實作的方法：每一組有幾個 cell
@@ -163,6 +163,7 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
    
     @objc func press(sender: UIButton!)
     {
+        print("create room")
         let controller = UIAlertController(title: "進入聊天室", message: "請輸入聊天室密碼", preferredStyle: .alert)
         controller.addTextField { (textField) in
             textField.placeholder = "密碼"
@@ -182,17 +183,39 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
         present(controller, animated: true, completion: nil)
 
     }
+
+    @IBAction func deleteRoom(_ sender: UIButton) {
+        print("delete room")
+        let controller = UIAlertController(title: "清除聊天室", message: "確定嗎", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            
+            do{
+                try FileManager.default.removeItem(at: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("roomInfo").appendingPathExtension("plist"))
+                try FileManager.default.removeItem(at: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("rooms").appendingPathExtension("plist"))
+            }catch{
+                
+            }
+            self.rooms?.removeAll()
+            DispatchQueue.main.async(){
+                self.myCollectionView.reloadData()
+            }
+        }
+        controller.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+    }
     // 設置 reuse 的 section 的 header 或 footer
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // 建立 UICollectionReusableView
         var reusableView = UICollectionReusableView()
         
-        let label = UILabel()
-        label.frame = CGRect(x: 0, y: 0, width: fullScreenSize.width, height: 40)
+       
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: fullScreenSize.width, height: 40)
         
-        
+     
         // header
         if kind == UICollectionView.elementKindSectionHeader {
             // 依據前面註冊設置的識別名稱 "Header" 取得目前使用的 header
@@ -207,14 +230,13 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
             // 依據前面註冊設置的識別名稱 "Footer" 取得目前使用的 footer
             reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "Footer", for: indexPath)
             // 設置 footer 的內容
-            label.text = "～趕快加入聊天室吧～";
-            label.textColor = UIColor.black
-            label.textAlignment = .center
+            // 設置 header 的內容
+         
             
         }
         
         reusableView.addSubview(button)
-        reusableView.addSubview(label)
+  
         return reusableView
     }
  

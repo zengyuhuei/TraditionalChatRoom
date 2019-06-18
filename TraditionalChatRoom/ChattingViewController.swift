@@ -37,6 +37,8 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
         if let data = UserData.read() {
             self.user = data
         }
+        //拿到之前的聊天記錄
+        self.getMessage(password: password)
         
         self.title = roomName
         //hide the tab bar
@@ -91,6 +93,45 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
         
         if mWebSocket.isConnected {
             mWebSocket.disconnect()
+        }
+        print("disconnect")
+    }
+    func getMessage(password: String) {
+        do {
+            let urlString = "http://140.121.198.84:9600/getMessage?chatroom_secret="+password
+            print(urlString)
+            let urlWithPercentEscapes = urlString.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)
+            let url = URL(string: urlWithPercentEscapes!)!
+            
+            let task = URLSession.shared.dataTask(with: url) { (data, response , error) in
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                
+                if let data = data, let results = try?
+                    decoder.decode(MessageResponse.self, from: data)
+                {
+                    print(results)
+                    if(results.code == 200){
+                        print("get message success")
+                        if results.message.count != 0{
+                            for i in 0...results.message.count-1{
+                                self.info.append(Message(name: results.message[i]["name"]!, message: results.message[i]["message"]!, chatroom_secret: results.message[i]["chatroom_secret"]!, timestamp: results.message[i]["timestamp"]!))
+                            }
+                            self.myTableView.reloadData()
+                        }
+                        
+                        
+                        
+                    } else {
+                        print("get message error")
+                    }
+                    
+                } else {
+                    print("error")
+                }
+            }
+            
+            task.resume()
         }
     }
     // 必須實作的方法：每一組有幾個 cell
@@ -194,6 +235,7 @@ extension ChattingViewController: WebSocketDelegate {
     /// 断开连接后的回调
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         print("websocketDidDisconnect, error = \(String(describing: error))")
+        self.mWebSocket.connect()
     }
     
     /// 接收到消息后的回调(String)
