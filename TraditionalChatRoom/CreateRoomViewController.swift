@@ -45,9 +45,7 @@ class CreateRoomViewController: UIViewController,UIImagePickerControllerDelegate
         fetchedDataByDataTask(from: request)
     }
     private func fetchedDataByDataTask(from request: URLRequest){
-        
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
             if error != nil{
                 print(error as Any)
             }else{
@@ -58,7 +56,6 @@ class CreateRoomViewController: UIViewController,UIImagePickerControllerDelegate
                 {
                     print(results)
                     if(results.code == 200){
-                        
                         print("createRoom success")
                         if let rooms = ResponseCode.loadFromFile(){
                             self.info = rooms
@@ -70,8 +67,6 @@ class CreateRoomViewController: UIViewController,UIImagePickerControllerDelegate
                         controller.addAction(okAction)
                         self.present(controller, animated: true, completion: nil)
                         self.getInfo(password: results.message)
-                       
-                        
                     } else {
                         print("createRoom error")
                         let controller = UIAlertController(title: "創立房間", message: "新建失敗", preferredStyle: .alert)

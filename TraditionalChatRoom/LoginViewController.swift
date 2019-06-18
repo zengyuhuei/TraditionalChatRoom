@@ -58,37 +58,22 @@ class LoginViewController: UIViewController {
     }
     
     func getFBUserData() {
-        
         if(FBSDKAccessToken.current() != nil) {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: {(connection, result, error) -> Void in
                 if (error == nil) {
                     print("success")
                     let facebookDic = result as! [String:AnyObject]
-                    print(facebookDic)
-                    
                     let name = facebookDic["name"] as! String
-                    print(name)
-                    
                     let email = facebookDic["email"] as! String
-                    print(email)
-                    
                     let facebookID = facebookDic["id"] as! String
-                    print(facebookID)
-                    
                     let picture = facebookDic["picture"] as! [String:AnyObject]
                     let pictureData = picture["data"] as! [String:AnyObject]
                     let pictureUrl = pictureData["url"] as! String
-                    print(pictureUrl)
-                    
                     let facebookAccessToken = FBSDKAccessToken.current()?.tokenString
-                    print(facebookAccessToken ?? "null")
                     UserData.save(userData: UserData(name: name, email: email, facebookID: facebookID, pictureUrl: pictureUrl, facebookAccessToken: facebookAccessToken ?? "null"))
                     self.addAccount(facebookAccessToken: facebookAccessToken ?? "null")
-                    
-                    
                 }
                 else {
-                    print("error")
                     print(error ?? "nothing")
                 }
             })

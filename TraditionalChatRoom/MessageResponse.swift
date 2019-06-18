@@ -8,7 +8,7 @@ struct MessageResponse: Codable {
     var message: [[String : String]]
     
     static let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("roomInfo").appendingPathExtension("plist")
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("message").appendingPathExtension("plist")
     
     static func loadFromFile() -> [MessageResponse]?  {
         guard let codedRooms = try? Data(contentsOf: ArchiveURL) else {return nil}

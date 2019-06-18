@@ -119,9 +119,6 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
                             }
                             self.myTableView.reloadData()
                         }
-                        
-                        
-                        
                     } else {
                         print("get message error")
                     }
@@ -130,7 +127,6 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
                     print("error")
                 }
             }
-            
             task.resume()
         }
     }
@@ -143,8 +139,6 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 取得 tableView 目前使用的 cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
-        
-        
         // 顯示的內容
         if let myLabel = cell.textLabel {
             myLabel.lineBreakMode = .byWordWrapping
@@ -226,18 +220,15 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
 }
 
 extension ChattingViewController: WebSocketDelegate {
-    
     /// 连接成功后的回调
     func websocketDidConnect(socket: WebSocketClient) {
         print("websocketDidConnect")
     }
-    
     /// 断开连接后的回调
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         print("websocketDidDisconnect, error = \(String(describing: error))")
         self.mWebSocket.connect()
     }
-    
     /// 接收到消息后的回调(String)
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         print("websocketDidReceiveMessage, text = \(text)")
@@ -263,7 +254,6 @@ extension ChattingViewController: WebSocketDelegate {
             print("error")
         }
     }
-    
     /// 接收到消息后的回调(Data)
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
         print("websocketDidReceiveData")

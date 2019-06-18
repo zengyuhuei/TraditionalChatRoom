@@ -76,8 +76,6 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MyCollectionViewCell
         let rooms = RoomCode.loadFromFile()
         // 設置 cell 內容 (即自定義元件裡 增加的圖片與文字元件)
-        
-        
         let base64String = rooms?[indexPath.item].message["chatroom_image_base64"]
         if base64String != nil {
             let decodedData = NSData(base64Encoded: base64String!, options: [])
@@ -92,7 +90,6 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
         }
         print(indexPath)
         cell.titleLabel.text = rooms?[indexPath.item].message["chatroom_name"]
-        
         return cell
     }
     
@@ -119,11 +116,9 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
             print(urlString)
             let urlWithPercentEscapes = urlString.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)
             let url = URL(string: urlWithPercentEscapes!)!
-            
             let task = URLSession.shared.dataTask(with: url) { (data, response , error) in
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
-                
                 if let data = data, let results = try?
                     decoder.decode(RoomCode.self, from: data)
                 {
@@ -142,7 +137,6 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
                         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                         controller.addAction(okAction)
                         self.present(controller, animated: true, completion: nil)
-
                     } else {
                         print("getChatroomInfo error")
                         //show that add room success
@@ -151,12 +145,10 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
                         controller.addAction(okAction)
                         self.present(controller, animated: true, completion: nil)
                     }
-                    
                 } else {
                     print("error")
                 }
             }
-            
             task.resume()
         }
     }
@@ -187,7 +179,6 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
     @IBAction func deleteRoom(_ sender: UIButton) {
         print("delete room")
         let controller = UIAlertController(title: "清除聊天室", message: "確定嗎", preferredStyle: .alert)
-        
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
             
             do{
@@ -229,10 +220,6 @@ class ChatRoomViewController:UIViewController, UICollectionViewDelegate, UIColle
         } else if kind == UICollectionView.elementKindSectionFooter {
             // 依據前面註冊設置的識別名稱 "Footer" 取得目前使用的 footer
             reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "Footer", for: indexPath)
-            // 設置 footer 的內容
-            // 設置 header 的內容
-         
-            
         }
         
         reusableView.addSubview(button)
